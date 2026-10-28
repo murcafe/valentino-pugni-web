@@ -1,0 +1,18 @@
+# Fotos de ejemplo (Unsplash, licencia Unsplash). Reemplazar por fotos reales antes de publicar.
+ventanal-pileta.jpg  https://unsplash.com/photos/1600573472550-8090b5e0745e
+chalet-madera.jpg  https://unsplash.com/photos/1568605114967-8130f3a36994
+living-vista.jpg  https://unsplash.com/photos/1560448204-e02f11c3d0e2
+casa-minimalista-pileta.jpg  https://unsplash.com/photos/1613490493576-7fde63acd811
+casa-jardin-pileta.jpg  https://unsplash.com/photos/1564013799919-ab600027ffc6
+casa-contemporanea.jpg  https://unsplash.com/photos/1600585154340-be6161a56a0c
+hero-casa-madera.jpg  https://unsplash.com/photos/1600566753190-17f0baa2a6c3
+casa-blanca-pileta.jpg  https://unsplash.com/photos/1600596542815-ffad4c1539a9
+casa-galeria.jpg  https://unsplash.com/photos/1570129477492-45c003edd2be
+sillon-amarillo.jpg  https://unsplash.com/photos/1586023492125-27b2c045efd7
+living-luminoso.jpg  https://unsplash.com/photos/1600210492486-724fe5c67fb0
+casa-moderna-noche.jpg  https://unsplash.com/photos/1600585154526-990dced4db0d
+living-madera.jpg  https://unsplash.com/photos/1600607687939-ce8a6c25118c
+cocina-blanca.jpg  https://unsplash.com/photos/1484154218962-a197022b5858
+depto-ambiente.jpg  https://unsplash.com/photos/1522708323590-d24dbb6b0267
+depto-living.jpg  https://unsplash.com/photos/1502672260266-1c1ef2d93688
+360/casa-ventanales.jpg  https://polyhaven.com/a/glasshouse_interior (Poly Haven, CC0, Dario Barresi; achicada a 4096x2048)

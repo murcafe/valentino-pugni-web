@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Valentino Pugni · sitio web
 
-## Getting Started
+Sitio personal de Valentino Pugni, asesor inmobiliario de Estudio Gibert en La Plata y City Bell.
+Next.js 16 (App Router), Tailwind 4, Motion y Lenis.
 
-First, run the development server:
+## Cómo correrlo
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm test
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Dónde se cambian los datos
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Contacto, oficina y matrícula:** `lib/site.ts`
+- **Propiedades:** `data/propiedades.ts`. Hoy son todas de ejemplo (`ejemplo: true`) y se muestran con esa etiqueta.
+  Las fotos van en `public/images/ejemplos/` (créditos en `CREDITOS.txt`).
+- **Vista 360°:** campo `tour360` de cada propiedad, con una foto equirectangular 2:1 (cámara 360 o modo panorámica 360 del celular).
+- **Datos extremos para probar el diseño (solo en desarrollo):** correr el dev server con la variable de entorno `DATOS=peor` (también `vacio` o `una`).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Antes de publicar: [COMPLETAR]
 
-## Learn More
+Buscá `[COMPLETAR]` en el código. Falta:
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Logo en SVG y foto de Valentino
+- Número de matrícula y colegio
+- Localidad, coordenadas exactas y horario de la oficina
+- Dominio definitivo (`NEXT_PUBLIC_SITE_URL`)
+- Aprobar el texto de "Sobre mí"
+- Propiedades reales con sus fotos (y fotos 360 si hay)
+- Testimonios reales: la sección queda oculta hasta tenerlos
