@@ -222,7 +222,18 @@
     opacity: 0;
   }
 }
+/* Reveals atados al scroll: donde no hay scroll-driven animations, simplemente se ve.
+   --reveal-delay (en "segundos" de Reveal) corre el arranque dentro del tramo de entrada. */
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: entra var(--ease-premium) both;
+    animation-timeline: view();
+    /* tramo medido en "cover" (pantalla + elemento): la subida dura lo mismo en un título que en un bloque alto */
+    animation-range: cover calc(var(--reveal-delay, 0) * 50%) cover calc(20% + var(--reveal-delay, 0) * 50%);
+  }
+}
 @media (prefers-reduced-motion: reduce) {
+  .reveal,
   .hero-entra,
   .vidriera-entra {
     animation-name: aparece;

@@ -20,8 +20,11 @@ export function hoyISO(ahora = new Date()) {
   return new Intl.DateTimeFormat("en-CA", { timeZone: TZ }).format(ahora)
 }
 
+// `ahora` es opcional y el reloj se lee solo si hay una fecha elegida: leerlo al renderizar
+// hace que Next saque la ficha entera del HTML (Cache Components) y sin JS queda vacía.
+
 /** "hoy", "mañana" o "el sábado 9 de noviembre". */
-export function diaTexto(dia: Dia, ahora = new Date()) {
+export function diaTexto(dia: Dia, ahora?: Date) {
   if (dia.tipo === "hoy") return "hoy"
   if (dia.tipo === "mañana") return "mañana"
   // Mediodía UTC: el día no se corre por zona horaria.
@@ -32,7 +35,7 @@ export function diaTexto(dia: Dia, ahora = new Date()) {
 }
 
 /** null si la visita se puede pedir; si no, el problema en palabras. */
-export function validarVisita(v: Visita, ahora = new Date()): string | null {
+export function validarVisita(v: Visita, ahora?: Date): string | null {
   if (v.dia.tipo === "fecha") {
     if (!/^\d{4}-\d{2}-\d{2}$/.test(v.dia.fecha)) return "Elegí un día para la visita."
     if (v.dia.fecha < hoyISO(ahora)) return "Esa fecha ya pasó: elegí hoy o un día que venga."
@@ -41,7 +44,7 @@ export function validarVisita(v: Visita, ahora = new Date()): string | null {
   return null
 }
 
-export function mensajeVisita(v: Visita, ahora = new Date()) {
+export function mensajeVisita(v: Visita, ahora?: Date) {
   const nombre = v.nombre?.trim()
   const saludo = nombre ? `Hola Valentino, soy ${nombre}.` : "Hola Valentino."
   return `${saludo} Quiero coordinar una visita a "${v.titulo}" (${v.url}) ${diaTexto(v.dia, ahora)} por la ${v.franja}. ¿Te queda bien?`

@@ -1,4 +1,4 @@
-import type { Transition, Variants } from "motion/react"
+import type { Transition } from "motion/react"
 
 /** Curva "premium": arranca decidida y frena largo. */
 export const easePremium = [0.22, 1, 0.36, 1] as const
@@ -12,9 +12,3 @@ export const transitions = {
   /** Layout, modales y elementos que se reacomodan. */
   spring: { type: "spring", visualDuration: 0.45, bounce: 0.12 },
 } satisfies Record<string, Transition>
-
-/** Entrada estándar al aparecer en pantalla. `custom` = delay en segundos. */
-export const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: (delay: number = 0) => ({ opacity: 1, y: 0, transition: { ...transitions.reveal, delay } }),
-}

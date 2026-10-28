@@ -27,6 +27,22 @@ test("sin fecha elegida no se rompe", () => {
   assert.match(mensajeVisita({ ...base, dia: { tipo: "fecha", fecha: "" } }, ahora), /el día que elijas/)
 })
 
+test("sin fecha elegida no lee el reloj (si lo lee, la ficha sale del HTML y sin JS queda vacía)", () => {
+  const Real = Date
+  globalThis.Date = new Proxy(Real, {
+    construct(t, args) {
+      if (!args.length) throw new Error("leyó el reloj al renderizar")
+      return Reflect.construct(t, args)
+    },
+  })
+  try {
+    mensajeVisita({ ...base, dia: { tipo: "mañana" } })
+    validarVisita({ ...base, dia: { tipo: "hoy" } })
+  } finally {
+    globalThis.Date = Real
+  }
+})
+
 test("validación amable", () => {
   assert.equal(validarVisita({ ...base, dia: { tipo: "hoy" } }, ahora), null)
   assert.match(validarVisita({ ...base, dia: { tipo: "fecha", fecha: "2026-10-27" } }, ahora) ?? "", /ya pasó/)

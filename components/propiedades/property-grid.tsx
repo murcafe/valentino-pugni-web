@@ -40,7 +40,7 @@ export function PropertyGrid({
         </AnimatePresence>
       </motion.ul>
 
-      <AnimatePresence>
+      <AnimatePresence initial={false}>
         {propiedades.length === 0 && (
           <motion.div
             key="vacio"

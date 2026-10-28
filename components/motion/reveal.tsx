@@ -1,11 +1,10 @@
-"use client"
+import type { ComponentProps, CSSProperties } from "react"
+import { cn } from "@/lib/utils"
 
-import { motion, type HTMLMotionProps } from "motion/react"
-import { fadeUp } from "@/lib/motion"
-
-const viewport = { once: true, amount: 0.25, margin: "0px 0px -60px 0px" } as const
-
-/** Fundido + subida suave al entrar en pantalla (una sola vez). */
-export function Reveal({ delay = 0, ...props }: HTMLMotionProps<"div"> & { delay?: number }) {
-  return <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewport} custom={delay} {...props} />
+/**
+ * Fundido + subida suave al entrar en pantalla, solo con CSS (ver `.reveal` en globals.css).
+ * No depende del JS: si no carga, tarda o el navegador es viejo, el contenido se ve igual.
+ */
+export function Reveal({ delay = 0, className, style, ...props }: ComponentProps<"div"> & { delay?: number }) {
+  return <div className={cn("reveal", className)} style={{ "--reveal-delay": delay, ...style } as CSSProperties} {...props} />
 }
