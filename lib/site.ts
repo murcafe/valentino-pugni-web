@@ -8,8 +8,13 @@ export const site = {
   brand: "Estudio Gibert",
   description:
     "Valentino Pugni, asesor inmobiliario de Estudio Gibert. Compra, venta, alquiler y tasaciones en La Plata y City Bell.",
-  // [COMPLETAR] dominio definitivo (se usa para Open Graph, sitemap y JSON-LD)
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://valentinopugni.com.ar",
+  // [COMPLETAR] dominio definitivo en NEXT_PUBLIC_SITE_URL (Open Graph, sitemap, JSON-LD y los links que van por WhatsApp).
+  // Mientras tanto, en Vercel se usa la dirección .vercel.app del proyecto.
+  url:
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    (process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL}`
+      : "http://localhost:3000"),
   locale: "es_AR",
   zonas: ["La Plata", "City Bell"],
 
